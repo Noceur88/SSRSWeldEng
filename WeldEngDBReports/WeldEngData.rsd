@@ -1,0 +1,234 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SharedDataSet xmlns="http://schemas.microsoft.com/sqlserver/reporting/2010/01/shareddatasetdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <DataSet Name="DataSet1">
+    <Query>
+      <DataSourceReference>WeldEngDB</DataSourceReference>
+      <DataSetParameters>
+        <DataSetParameter Name="@ProdNo">
+          <ReadOnly>false</ReadOnly>
+          <Nullable>true</Nullable>
+          <OmitFromQuery>false</OmitFromQuery>
+          <rd:DbType>String</rd:DbType>
+        </DataSetParameter>
+        <DataSetParameter Name="@PQR">
+          <ReadOnly>false</ReadOnly>
+          <Nullable>true</Nullable>
+          <OmitFromQuery>false</OmitFromQuery>
+          <rd:DbType>String</rd:DbType>
+        </DataSetParameter>
+        <DataSetParameter Name="@WeldBraze">
+          <ReadOnly>false</ReadOnly>
+          <Nullable>true</Nullable>
+          <OmitFromQuery>false</OmitFromQuery>
+          <rd:DbType>String</rd:DbType>
+        </DataSetParameter>
+        <DataSetParameter Name="@RegAgency">
+          <ReadOnly>false</ReadOnly>
+          <Nullable>true</Nullable>
+          <OmitFromQuery>false</OmitFromQuery>
+          <rd:DbType>String</rd:DbType>
+        </DataSetParameter>
+        <DataSetParameter Name="@JointClass">
+          <ReadOnly>false</ReadOnly>
+          <Nullable>true</Nullable>
+          <OmitFromQuery>false</OmitFromQuery>
+          <rd:DbType>String</rd:DbType>
+        </DataSetParameter>
+        <DataSetParameter Name="@Flux">
+          <ReadOnly>false</ReadOnly>
+          <Nullable>true</Nullable>
+          <OmitFromQuery>false</OmitFromQuery>
+          <rd:DbType>String</rd:DbType>
+        </DataSetParameter>
+        <DataSetParameter Name="@Gas">
+          <ReadOnly>false</ReadOnly>
+          <Nullable>true</Nullable>
+          <OmitFromQuery>false</OmitFromQuery>
+          <rd:DbType>String</rd:DbType>
+        </DataSetParameter>
+        <DataSetParameter Name="@Purge">
+          <ReadOnly>false</ReadOnly>
+          <Nullable>true</Nullable>
+          <OmitFromQuery>false</OmitFromQuery>
+          <rd:DbType>String</rd:DbType>
+        </DataSetParameter>
+        <DataSetParameter Name="@Preheat">
+          <ReadOnly>false</ReadOnly>
+          <Nullable>true</Nullable>
+          <OmitFromQuery>false</OmitFromQuery>
+          <rd:DbType>String</rd:DbType>
+        </DataSetParameter>
+        <DataSetParameter Name="@PWSR">
+          <ReadOnly>false</ReadOnly>
+          <Nullable>true</Nullable>
+          <OmitFromQuery>false</OmitFromQuery>
+          <rd:DbType>String</rd:DbType>
+        </DataSetParameter>
+        <DataSetParameter Name="@FillerMatType">
+          <ReadOnly>false</ReadOnly>
+          <Nullable>true</Nullable>
+          <OmitFromQuery>false</OmitFromQuery>
+          <rd:DbType>String</rd:DbType>
+        </DataSetParameter>
+        <DataSetParameter Name="@FillerMatGroup">
+          <ReadOnly>false</ReadOnly>
+          <Nullable>true</Nullable>
+          <OmitFromQuery>false</OmitFromQuery>
+          <rd:DbType>String</rd:DbType>
+        </DataSetParameter>
+        <DataSetParameter Name="@FillerThick">
+          <ReadOnly>false</ReadOnly>
+          <Nullable>true</Nullable>
+          <OmitFromQuery>false</OmitFromQuery>
+          <rd:DbType>String</rd:DbType>
+        </DataSetParameter>
+        <DataSetParameter Name="@BaseMatType">
+          <ReadOnly>false</ReadOnly>
+          <Nullable>true</Nullable>
+          <OmitFromQuery>false</OmitFromQuery>
+          <rd:DbType>String</rd:DbType>
+        </DataSetParameter>
+        <DataSetParameter Name="@BaseMatGroup">
+          <ReadOnly>false</ReadOnly>
+          <Nullable>true</Nullable>
+          <OmitFromQuery>false</OmitFromQuery>
+          <rd:DbType>String</rd:DbType>
+        </DataSetParameter>
+        <DataSetParameter Name="@BaseThick">
+          <ReadOnly>false</ReadOnly>
+          <Nullable>true</Nullable>
+          <OmitFromQuery>false</OmitFromQuery>
+          <rd:DbType>String</rd:DbType>
+        </DataSetParameter>
+        <DataSetParameter Name="@PlatePipe">
+          <ReadOnly>false</ReadOnly>
+          <Nullable>true</Nullable>
+          <OmitFromQuery>false</OmitFromQuery>
+          <rd:DbType>String</rd:DbType>
+        </DataSetParameter>
+      </DataSetParameters>
+      <CommandText>SELECT Procedure_Number, Procedure_Rev, PQR_or_WPS, Sign_Date, Welding_Brazing_Process, Base_Material_Type_Grade, Base_Material_Group, Plate_Plate, Base_Thickness_Range, Joint_Design_Class, Filler_Material_Type, Filler_Material_Group, Filler_Thickness_Range, Wire_Flux, Gas, Purge, Preheat, PWSR, Regulatory_Agency, PDF_Link
+
+FROM   Weld_Procedure
+
+WHERE 
+(Procedure_Number = @ProdNo OR @ProdNo IS NULL)
+AND
+(PQR_or_WPS = @PQR OR @PQR IS NULL)
+AND
+(Welding_Brazing_Process = @WeldBraze OR @WeldBraze IS NULL)
+AND
+(Regulatory_Agency = @RegAgency OR @RegAgency IS NULL)
+AND
+(Joint_Design_Class = @JointClass OR @JointClass IS NULL)
+AND
+(Wire_Flux = @Flux OR @Flux IS NULL)
+AND
+(Gas = @Gas OR @Gas IS NULL)
+AND
+(Purge = @Purge OR @Purge IS NULL)
+AND
+(Preheat = @Preheat OR @Preheat IS NULL)
+AND
+(PWSR = @PWSR OR @PWSR IS NULL)
+AND
+(Filler_Material_Type = @FillerMatType OR @FillerMatType IS NULL)
+AND
+(Filler_Material_Group = @FillerMatGroup OR @FillerMatGroup IS NULL)
+AND
+(Filler_Thickness_Range = @FillerThick OR @FillerThick IS NULL)
+AND
+(Base_Material_Type_Grade = @BaseMatType OR @BaseMatType IS NULL)
+AND
+(Base_Material_Group = @BaseMatGroup OR @BaseMatGroup IS NULL)
+AND
+(Base_Thickness_Range = @BaseThick OR @BaseThick IS NULL)
+AND
+(Plate_Plate = @PlatePipe OR @PlatePipe IS NULL)
+
+ORDER BY Procedure_Number, Procedure_Rev</CommandText>
+    </Query>
+    <Fields>
+      <Field Name="Procedure_Number">
+        <DataField>Procedure_Number</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Procedure_Rev">
+        <DataField>Procedure_Rev</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="PQR_or_WPS">
+        <DataField>PQR_or_WPS</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Sign_Date">
+        <DataField>Sign_Date</DataField>
+        <rd:TypeName>System.DateTime</rd:TypeName>
+      </Field>
+      <Field Name="Welding_Brazing_Process">
+        <DataField>Welding_Brazing_Process</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Base_Material_Type_Grade">
+        <DataField>Base_Material_Type_Grade</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Base_Material_Group">
+        <DataField>Base_Material_Group</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Plate_Plate">
+        <DataField>Plate_Plate</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Base_Thickness_Range">
+        <DataField>Base_Thickness_Range</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Joint_Design_Class">
+        <DataField>Joint_Design_Class</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Filler_Material_Type">
+        <DataField>Filler_Material_Type</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Filler_Material_Group">
+        <DataField>Filler_Material_Group</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Filler_Thickness_Range">
+        <DataField>Filler_Thickness_Range</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Wire_Flux">
+        <DataField>Wire_Flux</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Gas">
+        <DataField>Gas</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Purge">
+        <DataField>Purge</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Preheat">
+        <DataField>Preheat</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="PWSR">
+        <DataField>PWSR</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Regulatory_Agency">
+        <DataField>Regulatory_Agency</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="PDF_Link">
+        <DataField>PDF_Link</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+    </Fields>
+  </DataSet>
+</SharedDataSet>

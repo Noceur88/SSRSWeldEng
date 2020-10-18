@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30104.148
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{F14B399A-7131-4C87-9E4B-1186C45EF12D}") = "WeldEngDBReports", "WeldEngDBReports\WeldEngDBReports.rptproj", "{2E730B16-6593-437F-8870-29E7BE1E8D5E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Default = Debug|Default
+		DebugLocal|Default = DebugLocal|Default
+		Release|Default = Release|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2E730B16-6593-437F-8870-29E7BE1E8D5E}.Debug|Default.ActiveCfg = Release
+		{2E730B16-6593-437F-8870-29E7BE1E8D5E}.Debug|Default.Build.0 = Release
+		{2E730B16-6593-437F-8870-29E7BE1E8D5E}.Debug|Default.Deploy.0 = Release
+		{2E730B16-6593-437F-8870-29E7BE1E8D5E}.DebugLocal|Default.ActiveCfg = DebugLocal
+		{2E730B16-6593-437F-8870-29E7BE1E8D5E}.DebugLocal|Default.Build.0 = DebugLocal
+		{2E730B16-6593-437F-8870-29E7BE1E8D5E}.Release|Default.ActiveCfg = Release
+		{2E730B16-6593-437F-8870-29E7BE1E8D5E}.Release|Default.Build.0 = Release
+		{2E730B16-6593-437F-8870-29E7BE1E8D5E}.Release|Default.Deploy.0 = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {517D6F7C-F2DC-4FCF-BF84-2F46F72A0CED}
+	EndGlobalSection
+EndGlobal
